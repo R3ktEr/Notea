@@ -1,0 +1,7 @@
+{
+  "name": "Notea",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

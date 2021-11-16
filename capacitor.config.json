@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Notea",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
