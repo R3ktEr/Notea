@@ -1,3 +1,21 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+    <ion-menu side="start" menuId="first" contentId="main" [disabled]="menuDisabled">
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-title>{{'MENU'|translate}}</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-list>
+                <ion-item>{{'CHANGE_LANG'|translate}} ES
+                    <ion-toggle #mitoogle color="light" (ionChange)=cambiaIdioma($event)></ion-toggle> EN
+                </ion-item>
+                <ion-item>
+                    <ion-button class="logout" expand="full" size="medium" shape="round" color="primary" (click)="logout()">
+                        <ion-icon name="arrow-back-outline"></ion-icon>{{'LOGOUT'|translate}}</ion-button>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main" (activate)="disableMenu()"></ion-router-outlet>
 </ion-app>

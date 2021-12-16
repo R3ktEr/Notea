@@ -1,0 +1,39 @@
+<ion-header [translucent]="true" [hidden]="scanActive">
+    <ion-toolbar color="primary">
+        <ion-title>
+            {{'SCANNER'|translate}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" [style.--background]="scanActive ? '#00000000' : '#fff'">
+    <ion-card class="card" *ngIf="this.note!=null && !this.scanActive">
+        <ngx-qrcode *ngIf="createCode" class="qr" [width]="250" [value]="createCode"></ngx-qrcode>
+        <ion-card-header>
+            <ion-card-title class="title">{{this.note.title}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>{{this.note.description}}</ion-card-content>
+    </ion-card>
+
+    <div class="buttons" [hidden]="scanActive">
+        <ion-button class="create" color="primary" shape="round" *ngIf="this.note!=null" [disabled]="this.createCode!=''" (click)="create()">{{'GEN_QR'|translate}}</ion-button>
+        <ion-button class="clear" color="primary" shape="round" *ngIf="this.note!=null" [disabled]="this.createCode==''" (click)="clear()">{{'DEL_QR'|translate}}</ion-button>
+    </div>
+
+    <div class="scan-button">
+        <ion-button expand="full" shape="round" (click)="startScanner()" [hidden]="scanActive">
+            <ion-icon name="scan" slot="start"></ion-icon>
+            {{'SCAN'|translate}}
+        </ion-button>
+    </div>
+
+    <!--<p class="ion-text-center" *ngIf="result && !scanActive">{{result}}</p>-->
+
+    <ion-row class="scanner-buttons" [hidden]="!scanActive">
+        <ion-col class="ion-no-padding">
+            <ion-button expand="full" (click)="stopScanner()">{{'STOP_SCAN'|translate}}</ion-button>
+        </ion-col>
+    </ion-row>
+
+    <div class="scan-box" [hidden]="!scanActive"></div>
+</ion-content>

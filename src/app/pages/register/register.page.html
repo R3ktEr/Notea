@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="primary">
+        <ion-title class="bar_title">{{'REGISTER'|translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+    <ion-card class="card">
+        <img class="login_image" src="../../../assets/images/nota.png">
+        <ion-card-header>
+            <ion-card-title class="card-title" color="secondary">{{'SIGNIN'|translate}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="card-content">
+            <form [formGroup]="form" (ngSubmit)="register()">
+                <ion-input class="mail" color="secondary" placeholder="{{'MAIL'|translate}}" formControlName="email"></ion-input>
+                <ion-input class="input" color="secondary" type="password" placeholder="{{'PASSWORD'|translate}}" formControlName="password"></ion-input>
+                <ion-input class="input" color="secondary" type="password" placeholder="{{'REPEAT_PASSWORD'|translate}}" formControlName="repeatedPassword"></ion-input>
+                <ion-button class="register-button" type="submit" shape="round" [disabled]="this.form.invalid">
+                    <ion-icon name="person-add"></ion-icon>&nbsp;{{'SIGNIN'|translate}}
+                </ion-button>
+                <ion-button class="cancel-button" shape="round" (click)="goBack()">
+                    <ion-icon name="arrow-back"></ion-icon>&nbsp;{{'BACK'|translate}}
+                </ion-button>
+            </form>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

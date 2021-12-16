@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Notea</string>
+    <string name="title_activity_main">Notea</string>
+    <string name="package_name">com.cristian.Notea</string>
+    <string name="custom_url_scheme">com.cristian.Notea</string>
+    <string name="server_client_id">775019034892-epq79g8drp7fmrht9lth6lvuqh48drj6.apps.googleusercontent.com</string>
+</resources>

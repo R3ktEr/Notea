@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="primary">
+        <ion-title>
+            {{'NEW_NOTE'|translate}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <form [formGroup]="formNota" (ngSubmit)="addNote()">
+        <ion-item>
+            <ion-label>{{'TITLE'|translate}}</ion-label>
+            <ion-input type="text" formControlName="title"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{'TEXT'|translate}}</ion-label>
+            <ion-textarea formControlName="description"></ion-textarea>
+        </ion-item>
+        <ion-button expand="full" color="primary" shape="round" type="submit" [disabled]="this.formNota.invalid">{{'ADD'|translate}}</ion-button>
+    </form>
+</ion-content>

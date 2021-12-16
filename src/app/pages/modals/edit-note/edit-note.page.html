@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="primary">
+        <ion-title>
+            {{'EDIT_NOTE'|translate}}
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-icon (click)="closeModal()" name="close-circle"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <form [formGroup]="formNota" (ngSubmit)="editNote()">
+        <ion-item>
+            <ion-label>{{'TITLE'|translate}}</ion-label>
+            <ion-input type="text" formControlName="title" [(ngModel)]="this.note.title"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{'TEXT'|translate}}</ion-label>
+            <ion-textarea formControlName="description" [(ngModel)]="this.note.description"></ion-textarea>
+        </ion-item>
+        <ion-button class="add_button" expand="full" color="primary" shape="round" type="submit" [disabled]="this.formNota.invalid||(this.formNota.controls.title.pristine&&
+        this.formNota.controls.description.pristine)">{{'EDIT'|translate}}</ion-button>
+    </form>
+</ion-content>
