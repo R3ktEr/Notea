@@ -2,7 +2,6 @@ export const environment = {
   production: true,
 
   firebaseConfig : {
-    apiKey: "AIzaSyBfdz5SabBc3wTCZvWPl8evZ3xbSQsBydU",
     authDomain: "notea-6ac46.firebaseapp.com",
     projectId: "notea-6ac46",
     storageBucket: "notea-6ac46.appspot.com",
